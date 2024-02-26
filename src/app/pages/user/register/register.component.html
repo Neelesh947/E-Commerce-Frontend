@@ -1,0 +1,60 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <mat-card class="card">
+                <h3 class="text-center"> Register Here !!</h3>
+                    <form (ngSubmit)="formSubmit()">
+                        <table class="example-full-width" cellspacing="0"><tr>
+                            <td><mat-form-field class="example-full-width">
+                              <mat-label>First name</mat-label>
+                              <input matInput [(ngModel)]="user.firstname" name="firstname">
+                            </mat-form-field></td>
+                            <td><mat-form-field class="example-full-width">
+                              <mat-label>Last Name</mat-label>
+                              <input matInput [(ngModel)]="user.lastname" name="lastname">
+                            </mat-form-field></td>
+                        </tr></table>
+
+                        <mat-form-field appearance="fill" class="username">
+                            <mat-label>Enter Username</mat-label>
+                            <input matInput [(ngModel)]="user.username" name="username"
+                             placeholder="Enter username">
+                        </mat-form-field>
+
+                        <mat-form-field class="password">
+                            <mat-label>Enter password</mat-label>
+                            <input matInput [(ngModel)]="user.password" name="password" [type]="hide ? 'password' : 'text'">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                        
+                        <mat-form-field class="password">
+                            <mat-label>Enter confirm password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="email">
+                            <mat-label>Enter Email</mat-label>
+                            <input matInput [(ngModel)]="user.email" name="email" placeholder="Enter username">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="phone">
+                            <mat-label>Enter Phone</mat-label>
+                            <input matInput [(ngModel)]="user.phone" name="phone" placeholder="Enter username">
+                        </mat-form-field>
+
+                        <div class="button">
+                            <button type="submit" mat-raised-button color="primary">Register</button>
+                            <button  type="reset" mat-raised-button>Reset</button>
+                        </div>                      
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

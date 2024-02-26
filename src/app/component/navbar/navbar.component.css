@@ -1,0 +1,29 @@
+/* Add this to your component's stylesheet */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  margin-right: auto; /* Push the brand/logo to the left */
+}
+
+.spacer {
+  flex-grow: 1; /* Take up remaining space to push items to the right */
+}
+
+/* Adjust margin and padding as needed */
+.mat-toolbar-row,
+.mat-toolbar {
+  margin-right: 10px;
+  padding-right: 10px;
+}
+
+/* Adjust the styles for the buttons and icons as needed */
+.mat-button,
+mat-icon {
+  margin-left: 20px;
+  color: aliceblue;
+  text-transform: uppercase;
+}
