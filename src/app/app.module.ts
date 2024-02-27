@@ -25,6 +25,7 @@ import { ProductComponent } from './pages/admin/product/product.component';
 import { OrdersComponent } from './pages/admin/orders/orders.component';
 import { PostcouponsComponent } from './pages/admin/postcoupons/postcoupons.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatMenuModule,MatCardModule,
     MatFormFieldModule,MatButtonModule,
     FormsModule,MatInputModule,MatSnackBarModule,
-    HttpClientModule,MatSelectModule
+    HttpClientModule,MatSelectModule,
+    MatDividerModule
   ],
   providers: [
     provideAnimationsAsync()
