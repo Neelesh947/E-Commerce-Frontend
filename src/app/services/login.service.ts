@@ -85,4 +85,14 @@ export class LoginService {
     }
   }
 
+  //get userId
+  public getUserId(){
+    const user= this.getUser();
+    if(user==null)
+    {
+      return '';
+    }
+    return user.userId;
+  }
+
 }

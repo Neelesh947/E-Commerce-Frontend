@@ -60,16 +60,14 @@ export class LoginComponent implements OnInit{
 
               //admin dashboard
              // window.location.href='/admin'
-             this.router.navigate(['admin']);
+             this.router.navigate(['admin/dashboard']);
              this.login.loginStatusSubject.next(true);
 
             } 
             else if(userRoles.includes('CUSTOMER')) {
-              // Perform actions for normal user
-              //console.log('User is a normal user.');
               // normal user dashboard
               // window.location.href='/user-dashboard'
-              this.router.navigate(['user-dashboard']);
+              this.router.navigate(['user-dashboard/dashboard']);
               this.login.loginStatusSubject.next(true);
             }
             else

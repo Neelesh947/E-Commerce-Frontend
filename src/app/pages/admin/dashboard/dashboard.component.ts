@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../../services/admin.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +13,7 @@ export class DashboardComponent implements OnInit{
 
   products=[
     {
+      productId:'',
       name:'',
       description:'',
       price:'',
@@ -21,6 +23,8 @@ export class DashboardComponent implements OnInit{
       categroyName:''
     }
   ]
+
+  searchProduct='';
   
   ngOnInit(): void {
     this.getAllProducts();
@@ -36,4 +40,27 @@ export class DashboardComponent implements OnInit{
     })
   }
 
+  searchProducts(){
+    this.products=[  ];
+    this.admin.getProductsByName(this.searchProduct).subscribe((data:any)=>{
+      data.forEach((element:any) => {
+        element.processedImg='data:image/jpeg;base64,' + element.byteImg; 
+        this.products.push(element);
+      });
+    })
+  }
+
+  deleteProducts(productId:any){
+    this.admin.deleteProducts(productId).subscribe((data:any)=>{
+      if(data==null)
+      {
+        Swal.fire("Success","Product Deleted Successfully",'success');
+        this.getAllProducts();
+      }
+      else
+      {
+        Swal.fire("Error", data.message,'error');
+      }
+    })
+  }
 }

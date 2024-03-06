@@ -12,6 +12,8 @@ import { AnalyticsComponent } from './pages/admin/analytics/analytics.component'
 import { ProductComponent } from './pages/admin/product/product.component';
 import { OrdersComponent } from './pages/admin/orders/orders.component';
 import { PostcouponsComponent } from './pages/admin/postcoupons/postcoupons.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { CartComponent } from './pages/user/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -63,7 +65,16 @@ const routes: Routes = [
   {
     path:'user-dashboard',
     component:CustomerhomeComponent,
-    pathMatch:"full"
+    children:[
+      {
+        path:'dashboard',
+        component:UserDashboardComponent
+      },
+      {
+        path:'cart',
+        component:CartComponent
+      }
+    ]
   },
   
 ];

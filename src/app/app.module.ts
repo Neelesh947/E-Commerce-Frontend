@@ -26,6 +26,12 @@ import { OrdersComponent } from './pages/admin/orders/orders.component';
 import { PostcouponsComponent } from './pages/admin/postcoupons/postcoupons.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
+import { CustomerhomeComponent } from './pages/user/customerhome/customerhome.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { CartComponent } from './pages/user/cart/cart.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CouponComponent } from './pages/admin/coupon/coupon.component';
+import { PostCouponComponent } from './pages/admin/post-coupon/post-coupon.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +47,11 @@ import {MatDividerModule} from '@angular/material/divider';
     ProductComponent,
     OrdersComponent,
     PostcouponsComponent,
+    CustomerhomeComponent,
+    UserDashboardComponent,
+    CartComponent,
+    CouponComponent,
+    PostCouponComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +61,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatFormFieldModule,MatButtonModule,
     FormsModule,MatInputModule,MatSnackBarModule,
     HttpClientModule,MatSelectModule,
-    MatDividerModule
+    MatDividerModule,MatDialogModule
   ],
   providers: [
     provideAnimationsAsync()

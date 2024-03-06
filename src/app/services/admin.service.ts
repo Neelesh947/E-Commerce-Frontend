@@ -33,4 +33,28 @@ export class AdminService {
   {
     return this.http.get(`${basicUrl}/product/`);
   }
+
+  //get products by name
+  public getProductsByName(name:any)
+  {
+    return this.http.get(`${basicUrl}/product/search/${name}`)
+  }
+
+  //delete products
+  public deleteProducts(productId:any)
+  {
+    return this.http.delete(`${basicUrl}/product/${productId}`);
+  }
+
+  //create coupons
+  public createCoupons(couponDto:any)
+  {
+    return this.http.post(`${basicUrl}/coupon/`,couponDto)
+  }
+
+  //get coupons
+  public getCoupons()
+  {
+    return this.http.get(`${basicUrl}/coupon/`)
+  }
 }
