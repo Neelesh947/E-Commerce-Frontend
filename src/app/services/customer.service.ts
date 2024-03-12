@@ -44,4 +44,20 @@ export class CustomerService {
       })
     );
   }
+
+  //get coupons/apply coupons
+  public applyCoupon(code:any)
+  {
+    return this.login.getCurrentUser().pipe(
+      mergeMap((data: any) => {
+        this.login.setUser(data);
+        const userId: string[] = data.id;
+        return this.http.get(`${basicUrl}/cart/coupon/${userId}/${code}`).pipe(
+          catchError((error) => {
+            console.error('Error in getTheCartItemsList:', error);
+            throw error;
+          }))
+      })
+    );
+  }
 }

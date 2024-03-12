@@ -109,7 +109,7 @@ form{
     mat-form-field{
         margin-bottom: 20px;
 
-        mat-form-firld-wrapper{
+        mat-form-field-wrapper{
             border-radius: 4px;
             border: 1px solid #ccc;
         }
@@ -131,7 +131,7 @@ form{
 .container{
     max-width: 600px;
     margin: 0 auto;
-    padding: 200px;
+    padding: 40px;
 }
 
 @media(max-width:600px){

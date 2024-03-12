@@ -1,1 +1,35 @@
-<p>post-coupon works!</p>
+<div class="container">
+    <h2>Add Coupons</h2>
+    <form (ngSubmit)="postCoupons()">
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Name</mat-label>
+            <input matInput 
+            [(ngModel)]="coupon.name" 
+            name="name" placeholder="Enter Coupon name">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Code</mat-label>
+            <input matInput 
+            [(ngModel)]="coupon.code" 
+            name="code" placeholder="Enter coupon code">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Discount %</mat-label>
+            <input matInput 
+            [(ngModel)]="coupon.discount" 
+            name="discount" placeholder="Enter discount %">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Expiration Date</mat-label>
+            <input matInput [matDatepicker]="picker"
+            [(ngModel)]="coupon.expirationDate"
+            name="expirationDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Add Coupon</button>
+    </form>
+</div>

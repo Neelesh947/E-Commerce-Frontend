@@ -31,7 +31,12 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { CartComponent } from './pages/user/cart/cart.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CouponComponent } from './pages/admin/coupon/coupon.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { PostCouponComponent } from './pages/admin/post-coupon/post-coupon.component';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import {MatTableModule} from '@angular/material/table';
+import { UcouponComponent } from './pages/user/ucoupon/ucoupon.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -52,6 +57,7 @@ import { PostCouponComponent } from './pages/admin/post-coupon/post-coupon.compo
     CartComponent,
     CouponComponent,
     PostCouponComponent,
+    UcouponComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,10 +67,12 @@ import { PostCouponComponent } from './pages/admin/post-coupon/post-coupon.compo
     MatFormFieldModule,MatButtonModule,
     FormsModule,MatInputModule,MatSnackBarModule,
     HttpClientModule,MatSelectModule,
-    MatDividerModule,MatDialogModule
+    MatDividerModule,MatDialogModule,
+    MatDatepickerModule,MatTableModule,ReactiveFormsModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideNativeDateAdapter()
   ],
   bootstrap: [AppComponent]
 })

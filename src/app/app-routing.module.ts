@@ -14,6 +14,8 @@ import { OrdersComponent } from './pages/admin/orders/orders.component';
 import { PostcouponsComponent } from './pages/admin/postcoupons/postcoupons.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { CartComponent } from './pages/user/cart/cart.component';
+import { PostCouponComponent } from './pages/admin/post-coupon/post-coupon.component';
+import { CouponComponent } from './pages/admin/coupon/coupon.component';
 
 const routes: Routes = [
   {
@@ -58,7 +60,11 @@ const routes: Routes = [
       },
       {
         path:'postcoupons',
-        component:PostcouponsComponent
+        component:PostCouponComponent
+      },
+      {
+        path:'coupons',
+        component:CouponComponent 
       }
     ]    
   },
