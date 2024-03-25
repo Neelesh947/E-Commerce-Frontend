@@ -46,4 +46,12 @@ export class CartComponent implements OnInit{
       this.snack.open("something went wrong","ok");
     })
   }
+
+  increaseQuantity(productId:any)
+  {
+    this.customer.increaseProductQuantity(productId).subscribe((data)=>{
+      this.snack.open("Product quantity increaseed","close",{duration:3000});
+      this.getCart();
+    })
+  }
 }

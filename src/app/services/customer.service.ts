@@ -60,4 +60,25 @@ export class CustomerService {
       })
     );
   }
+
+  //increase product quantity 
+  public increaseProductQuantity(productId:any)
+  {
+    return this.login.getCurrentUser().pipe(
+      mergeMap((data: any) => {
+        this.login.setUser(data);
+        const userId: string[] = data.id;
+        const cartDto={
+          productId:productId,
+          userId:userId
+        }        
+        return this.http.post(`${basicUrl}/cart/addQuantity`,cartDto).pipe(
+          catchError((error) => {
+            console.error('Error in getTheCartItemsList:', error);
+            throw error;
+          }))
+      })
+    );
+    
+  }
 }
