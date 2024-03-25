@@ -79,6 +79,57 @@ export class CustomerService {
           }))
       })
     );
-    
   }
+
+  //increase product quantity 
+  public decreaseProductQuantity(productId:any)
+  {
+    return this.login.getCurrentUser().pipe(
+      mergeMap((data: any) => {
+        this.login.setUser(data);
+        const userId: string[] = data.id;
+        const cartDto={
+          productId:productId,
+          userId:userId
+        }        
+        return this.http.post(`${basicUrl}/cart/decreaseQuantity`,cartDto).pipe(
+          catchError((error) => {
+            console.error('Error in getTheCartItemsList:', error);
+            throw error;
+          }))
+      })
+    );    
+  }
+
+  //get coupons/apply coupons
+  public placeOrder(orderDto:any)
+  {
+    return this.login.getCurrentUser().pipe(
+      mergeMap((data: any) => {
+        this.login.setUser(data);
+        orderDto.userId = data.id;
+        return this.http.post(`${basicUrl}/cart/place-order/`,orderDto).pipe(
+          catchError((error) => {
+            console.error('Error in getTheCartItemsList:', error);
+            throw error;
+          }))
+      })
+    );
+  }
+
+    //get the order for the customer/ user
+   public getOrdersByUserId()
+   {
+     return this.login.getCurrentUser().pipe(
+       mergeMap((data: any) => {
+         this.login.setUser(data);
+         const userId: string[] = data.id;
+         return this.http.get(`${basicUrl}/cart/myOrders/${userId}`).pipe(
+           catchError((error) => {
+             console.error('Error in getTheCartItemsList:', error);
+             throw error;
+           }))
+       })
+     );
+   }
 }

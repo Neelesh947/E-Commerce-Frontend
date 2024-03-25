@@ -37,6 +37,9 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
 import { UcouponComponent } from './pages/user/ucoupon/ucoupon.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PlaceOrderComponent } from './pages/user/place-order/place-order.component';
+import { MyOrderComponent } from './pages/user/my-order/my-order.component';
+import { PostProductFAQComponent } from './pages/admin/post-product-faq/post-product-faq.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +61,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CouponComponent,
     PostCouponComponent,
     UcouponComponent,
+    PlaceOrderComponent,
+    MyOrderComponent,
+    PostProductFAQComponent,
   ],
   imports: [
     BrowserModule,

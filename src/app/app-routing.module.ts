@@ -16,6 +16,8 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { CartComponent } from './pages/user/cart/cart.component';
 import { PostCouponComponent } from './pages/admin/post-coupon/post-coupon.component';
 import { CouponComponent } from './pages/admin/coupon/coupon.component';
+import { MyOrderComponent } from './pages/user/my-order/my-order.component';
+import { PostProductFAQComponent } from './pages/admin/post-product-faq/post-product-faq.component';
 
 const routes: Routes = [
   {
@@ -65,6 +67,10 @@ const routes: Routes = [
       {
         path:'coupons',
         component:CouponComponent 
+      },
+      {
+        path:'faq/:productId',
+        component:PostProductFAQComponent
       }
     ]    
   },
@@ -79,6 +85,10 @@ const routes: Routes = [
       {
         path:'cart',
         component:CartComponent
+      },
+      {
+        path:'my-order',
+        component:MyOrderComponent
       }
     ]
   },

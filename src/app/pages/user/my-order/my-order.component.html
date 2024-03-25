@@ -1,0 +1,51 @@
+<ng-container>
+    <mat-table #basicTable [dataSource]="myOrders" class="mat-elevation-z8">
+        <ng-container matColumnDef="trackingId">
+            <th mat-header-cell *matHeaderCellDef>Tracking Id</th>
+            <td mat-cell *matCellDef="let myOrders">{{myOrders.trackingId}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef>Amount</th>
+            <td mat-cell *matCellDef="let myOrders">{{myOrders.amount}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="orderDescription">
+            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <td mat-cell *matCellDef="let myOrders">{{myOrders.orderDescription}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef>Address</th>
+            <td mat-cell *matCellDef="let myOrders">{{myOrders.address}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef>Date</th>
+            <td mat-cell *matCellDef="let myOrders">{{myOrders.date | date:'dd/MM/yyyy'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let myOrders">{{myOrders.orderStatus}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let myOrders">
+                <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">Review</button>
+                <mat-menu #menu="matMenu">
+                    
+                </mat-menu>
+            </td>      
+        </ng-container>
+
+        <mat-header-row
+        *matHeaderRowDef="['trackingId','amount','orderDescription','address',
+        'date','Status','action']"></mat-header-row>
+
+        <mat-row
+        *matRowDef="let row; columns:['trackingId','amount','orderDescription','address',
+                    'date','Status','action']"></mat-row>
+    </mat-table>
+</ng-container>        

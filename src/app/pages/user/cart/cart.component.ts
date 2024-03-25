@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginService } from '../../../services/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PlaceOrderComponent } from '../place-order/place-order.component';
 
 @Component({
   selector: 'app-cart',
@@ -50,8 +51,20 @@ export class CartComponent implements OnInit{
   increaseQuantity(productId:any)
   {
     this.customer.increaseProductQuantity(productId).subscribe((data)=>{
-      this.snack.open("Product quantity increaseed","close",{duration:3000});
+      this.snack.open("Product quantity increased","close",{duration:3000});
       this.getCart();
     })
+  }
+
+  decreaseQuantity(productId:any)
+  {
+    this.customer.decreaseProductQuantity(productId).subscribe((data)=>{
+      this.snack.open("Product quantity decreased","close",{duration:3000});
+      this.getCart();
+    })
+  }
+
+  placeOrder(){
+    this.dialog.open(PlaceOrderComponent);
   }
 }

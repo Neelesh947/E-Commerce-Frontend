@@ -13,7 +13,7 @@
                         </div>
                         <div class="item-price">{{items.price | currency}}</div>
                         <div class="quantity-controls">
-                            <button mat-icon-button [disabled]="items.quantity==1">
+                            <button mat-icon-button [disabled]="items.quantity==1" (click)="decreaseQuantity(items.productId)">
                             <mat-icon>remove_circle_outline</mat-icon>
                             </button>
                             <span class="quantity">{{items.quantity}}</span>
@@ -39,7 +39,7 @@
         </div>
 
         <div>
-            <button mat-raised-button color="primary">Place Order</button>
+            <button mat-raised-button color="primary" (click)="placeOrder()">Place Order</button>
         </div>
 
     </div>

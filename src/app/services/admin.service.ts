@@ -57,4 +57,22 @@ export class AdminService {
   {
     return this.http.get(`${basicUrl}/coupon/`)
   }
+
+  //get all placed order
+  public getPlacedOrders()
+  {
+    return this.http.get(`${basicUrl}/Orders/placedOrder`)
+  }
+
+  //get all placed order
+  public changeOrderStatus(orderId:any, status:string)
+  {
+    return this.http.get(`${basicUrl}/Orders/${orderId}/${status}`)
+  }
+
+  //post FAQ
+  public postFAQ(productId:any,faQdto:any)
+  {
+    return this.http.post(`${basicUrl}/product/FAQ/${productId}`,faQdto)
+  }
 }
