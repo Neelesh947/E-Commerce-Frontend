@@ -75,4 +75,12 @@ export class AdminService {
   {
     return this.http.post(`${basicUrl}/product/FAQ/${productId}`,faQdto)
   }
+
+  //get product by id
+  public getProductsById(productId:any)
+  {
+    return this.http.get(`${basicUrl}/product/${productId}`);
+  }
+  //update the product details
+
 }

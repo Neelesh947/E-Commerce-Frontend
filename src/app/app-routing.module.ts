@@ -18,6 +18,7 @@ import { PostCouponComponent } from './pages/admin/post-coupon/post-coupon.compo
 import { CouponComponent } from './pages/admin/coupon/coupon.component';
 import { MyOrderComponent } from './pages/user/my-order/my-order.component';
 import { PostProductFAQComponent } from './pages/admin/post-product-faq/post-product-faq.component';
+import { UpdateProductComponent } from './pages/admin/update-product/update-product.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
       {
         path:'faq/:productId',
         component:PostProductFAQComponent
+      },
+      {
+        path:'update/:productId',
+        component:UpdateProductComponent
       }
     ]    
   },

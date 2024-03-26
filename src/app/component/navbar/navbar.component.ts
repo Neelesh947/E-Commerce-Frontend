@@ -5,32 +5,29 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css'] // Use styleUrls instead of styleUrl
 })
-export class NavbarComponent implements OnInit{
+export class NavbarComponent implements OnInit {
   
-  isLoggedIn=false;
-  user=null;
+  isLoggedIn = false;
+  isAdminLoggedIn = false;
+  isCustomerLoggedIn = false;
+  userRoles: string[] = [];
 
-  isAdminLoggedIn=false;
-  isCustomerLoggedIn=false;
-
-  constructor(public login:LoginService, private router:Router){}
+  constructor(public login: LoginService, private router: Router) {}
   
   ngOnInit(): void {
-    this.isLoggedIn=this.login.isLoggedIn();
-    
-    this.login.getCurrentUser().subscribe((users:any)=>{
-      const userRoles: string[] = users.role;
-      this.isAdminLoggedIn = userRoles.includes('ADMIN');
-      this.isCustomerLoggedIn = userRoles.includes('CUSTOMER');
-  })
-
+    this.isLoggedIn = this.login.isLoggedIn();    
+    this.login.getCurrentUser().subscribe((users: any) => {
+      this.userRoles = users.role || []; // Handle case where roles may be undefined
+      this.isAdminLoggedIn = this.userRoles.includes('ADMIN');
+      this.isCustomerLoggedIn = this.userRoles.includes('CUSTOMER');
+    });
   }
 
-  public logout(){
+  public logout(): void {
     this.login.logout();
-    this.router.navigate(['login']);
-  }
-
+    window.location.reload(); // Reloading the page may not be necessary, consider alternative methods
+    this.router.navigateByUrl('/login'); // Navigate to the login page
+  }  
 }

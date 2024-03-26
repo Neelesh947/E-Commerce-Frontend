@@ -40,6 +40,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PlaceOrderComponent } from './pages/user/place-order/place-order.component';
 import { MyOrderComponent } from './pages/user/my-order/my-order.component';
 import { PostProductFAQComponent } from './pages/admin/post-product-faq/post-product-faq.component';
+import { UpdateProductComponent } from './pages/admin/update-product/update-product.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { PostProductFAQComponent } from './pages/admin/post-product-faq/post-pro
     PlaceOrderComponent,
     MyOrderComponent,
     PostProductFAQComponent,
+    UpdateProductComponent,
   ],
   imports: [
     BrowserModule,

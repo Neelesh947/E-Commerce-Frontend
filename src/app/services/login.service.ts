@@ -10,6 +10,9 @@ const baseUrl="http://localhost:8081"
 export class LoginService {
 
   public loginStatusSubject=new Subject<boolean>();
+  isLoggedIn$: any;
+  isAdminLoggedIn$: any;
+  isCustomerLoggedIn$: any;
   
   constructor(private http:HttpClient) { }
 
