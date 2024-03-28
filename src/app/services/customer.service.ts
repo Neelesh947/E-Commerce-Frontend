@@ -132,4 +132,14 @@ export class CustomerService {
        })
      );
    }
+
+   public getOrderedProduct( orderId:any)
+   {
+    return this.http.get(`${basicUrl}/review/order-product/${orderId}`)
+   }
+
+   public giveReview(ReviewDto:any)
+   {
+      return this.http.post(`${basicUrl}/review/giveReview`,ReviewDto)
+   }
 }

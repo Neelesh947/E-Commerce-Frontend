@@ -19,6 +19,8 @@ import { CouponComponent } from './pages/admin/coupon/coupon.component';
 import { MyOrderComponent } from './pages/user/my-order/my-order.component';
 import { PostProductFAQComponent } from './pages/admin/post-product-faq/post-product-faq.component';
 import { UpdateProductComponent } from './pages/admin/update-product/update-product.component';
+import { ViewOrderProductsComponent } from './pages/user/view-order-products/view-order-products.component';
+import { ReviewOrderedProductComponent } from './pages/user/review-ordered-product/review-ordered-product.component';
 
 const routes: Routes = [
   {
@@ -94,6 +96,14 @@ const routes: Routes = [
       {
         path:'my-order',
         component:MyOrderComponent
+      },
+      {
+        path:"my-order/:orderId",
+        component:ViewOrderProductsComponent
+      },
+      {
+        path:"review/:productId",
+        component:ReviewOrderedProductComponent
       }
     ]
   },

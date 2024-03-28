@@ -41,6 +41,8 @@ import { PlaceOrderComponent } from './pages/user/place-order/place-order.compon
 import { MyOrderComponent } from './pages/user/my-order/my-order.component';
 import { PostProductFAQComponent } from './pages/admin/post-product-faq/post-product-faq.component';
 import { UpdateProductComponent } from './pages/admin/update-product/update-product.component';
+import { ViewOrderProductsComponent } from './pages/user/view-order-products/view-order-products.component';
+import { ReviewOrderedProductComponent } from './pages/user/review-ordered-product/review-ordered-product.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,8 @@ import { UpdateProductComponent } from './pages/admin/update-product/update-prod
     MyOrderComponent,
     PostProductFAQComponent,
     UpdateProductComponent,
+    ViewOrderProductsComponent,
+    ReviewOrderedProductComponent,
   ],
   imports: [
     BrowserModule,
