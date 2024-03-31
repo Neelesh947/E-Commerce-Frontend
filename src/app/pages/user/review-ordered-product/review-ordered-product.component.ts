@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CustomerService } from '../../../services/customer.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'app-review-ordered-product',
@@ -12,8 +13,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ReviewOrderedProductComponent implements OnInit{
 
   productId:any= this.activedRoutes.snapshot.params['productId'];
-  // userId:any = localStorage.getItem('userId');
-  // userData = JSON.parse(this.userId);
+  
+  userDataString = localStorage.getItem('user');
+  userData = this.userDataString ? JSON.parse(this.userDataString) : null;
+  userId = this.userData ? this.userData.id : null;
+
   
   reviewForm!: FormGroup;
   selectedFile: File | null |undefined;
@@ -24,7 +28,8 @@ export class ReviewOrderedProductComponent implements OnInit{
       private snack:MatSnackBar,
       private customer:CustomerService,
       private router:Router,
-      private activedRoutes: ActivatedRoute
+      private activedRoutes: ActivatedRoute,
+      private login:LoginService
       ){}
 
   ngOnInit(): void {
@@ -53,18 +58,11 @@ export class ReviewOrderedProductComponent implements OnInit{
       this.snack.open("Please select an image", 'ok', { duration: 3000 });
       return;
     }
-
-    const userId= localStorage.getItem('userId');
-    if (!userId) {
-      this.snack.open("User ID not found in local storage", 'ok', { duration: 3000 });
-      return;
-    }
-    const userData = JSON.parse(userId);
     
     const formData: FormData=new FormData;
     formData.append('img', this.selectedFile)
     formData.append('productId', this.productId.toString())
-    formData.append('userId', userData.toString())
+    formData.append('userId', this.userId ? this.userId.toString() : '')
     formData.append('rating', this.reviewForm.get('rating')?.value)
     formData.append('description', this.reviewForm.get('description')?.value)
 
