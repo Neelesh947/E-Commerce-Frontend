@@ -1,0 +1,46 @@
+<div class="center-container" *ngIf="product">
+    <div class="product-card">
+        <div class="product-img">
+            <img [src]="product.processedImg" alt="{{product.name}} Image">
+        </div>
+
+        <div class="product-details">
+            <h2>{{product.name}}</h2>
+            <p class="description">{{product.description}}</p>
+            <p class="price">Price: {{product.price}}</p>
+            <p class="category">Category: {{product.categroyName}}</p>
+        </div>
+    </div>
+</div>
+
+<h1 class="section-heading" *ngIf="review.length>0">Customer Reviews</h1>
+<div class="review-list" *ngIf="review">
+    <div class="center-container">
+        <div *ngFor="let r of review" class="review-card">
+            <div class="review-image">
+                <img [src]="r.processedImg" *ngIf="r.processedImg" alt="{{r.description}} Image" class="small-image">
+            </div>
+            <div class="review-details">
+                <h2>{{r.description}}</h2>
+                <div class="details-row">
+                    <p class="rating">Rating: {{r.rating}}  </p>
+                    <p class="username">Username: {{r.username}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 class="section-heading" *ngIf="FAQs.length>0">Frequently Asked Questions</h1>
+<div class="faq-list" *ngIf="FAQs">
+    <div class="center-container">
+        <div class="faq-card" *ngFor="let faq of FAQs">
+            <div class="faq-details">
+                <p class="question">Questions</p>
+                <p class="question-text">{{faq.question}}</p>
+                <p class="answer">Answer: </p>
+                <p class="answer-text">{{faq.answer}}</p>
+            </div>
+        </div>
+    </div>
+</div>

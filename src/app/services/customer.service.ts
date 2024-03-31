@@ -142,4 +142,9 @@ export class CustomerService {
    {
       return this.http.post(`${basicUrl}/review/giveReview`,ReviewDto)
    }
+
+   public getProductDetailsById(productId:any)
+   {
+      return this.http.get(`${basicUrl}/product/details/${productId}`);
+   }
 }

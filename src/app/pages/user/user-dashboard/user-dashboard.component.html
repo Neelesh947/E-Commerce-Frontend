@@ -14,7 +14,7 @@
             <img [src]="p.processedImg" alt="product-image">
         </div>
         <div class="product-details">
-            <h2 class="product-name">{{p.name}}</h2>
+            <h2 class="product-name" routerLink="/user-dashboard/product/{{p.productId}}">{{p.name}}</h2>
             <p class="product-description">{{p.description}}</p>
         </div>
 

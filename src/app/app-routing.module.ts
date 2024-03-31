@@ -21,6 +21,7 @@ import { PostProductFAQComponent } from './pages/admin/post-product-faq/post-pro
 import { UpdateProductComponent } from './pages/admin/update-product/update-product.component';
 import { ViewOrderProductsComponent } from './pages/user/view-order-products/view-order-products.component';
 import { ReviewOrderedProductComponent } from './pages/user/review-ordered-product/review-ordered-product.component';
+import { VieProductDetailsComponent } from './pages/user/vie-product-details/vie-product-details.component';
 
 const routes: Routes = [
   {
@@ -104,6 +105,10 @@ const routes: Routes = [
       {
         path:"review/:productId",
         component:ReviewOrderedProductComponent
+      },
+      {
+        path:"product/:productId",
+        component:VieProductDetailsComponent
       }
     ]
   },
