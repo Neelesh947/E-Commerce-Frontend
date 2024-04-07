@@ -44,6 +44,7 @@ import { UpdateProductComponent } from './pages/admin/update-product/update-prod
 import { ViewOrderProductsComponent } from './pages/user/view-order-products/view-order-products.component';
 import { ReviewOrderedProductComponent } from './pages/user/review-ordered-product/review-ordered-product.component';
 import { VieProductDetailsComponent } from './pages/user/vie-product-details/vie-product-details.component';
+import { ViewWishListComponent } from './pages/user/view-wish-list/view-wish-list.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { VieProductDetailsComponent } from './pages/user/vie-product-details/vie
     ViewOrderProductsComponent,
     ReviewOrderedProductComponent,
     VieProductDetailsComponent,
+    ViewWishListComponent,
   ],
   imports: [
     BrowserModule,

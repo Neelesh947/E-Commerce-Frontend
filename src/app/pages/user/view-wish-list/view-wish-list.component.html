@@ -1,0 +1,12 @@
+<div class="center-container">
+    <div class="product-cart" *ngFor="let p of products">
+        <div class="product-image">
+            <img [src]="p.processedImg" *ngIf="p.processedImg" alt="{{p.name }} Image">
+        </div>
+        <div class="product-details">
+            <h2>{{p.productName}}</h2>
+            <p class="description">{{p.productDescription}}</p>
+            <p class="price">Price: {{p.price}}</p>
+        </div>
+    </div>
+</div>

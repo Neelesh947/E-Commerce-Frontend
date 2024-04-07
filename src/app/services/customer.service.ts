@@ -147,4 +147,14 @@ export class CustomerService {
    {
       return this.http.get(`${basicUrl}/product/details/${productId}`);
    }
+
+   public addProductToWishList(wishListDto:any)
+   {
+      return this.http.post(`${basicUrl}/wishlist`,wishListDto)
+   }
+
+   public getListOfWishList(userId:any)
+   {
+      return this.http.get(`${basicUrl}/wishlist/${userId}`);
+   }
 }
