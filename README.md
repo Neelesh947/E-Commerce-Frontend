@@ -1,27 +1,35 @@
 # ECommerceWeb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+Admin Module:
 
-## Development server
+Secure Administrative Access: Administrators can securely log in, generate tokens, and access authenticated APIs, leveraging our robust JWT-based authentication and authorization system.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Category Management: Effortlessly post and retrieve product categories with seamless administrative control.
 
-## Code scaffolding
+Efficient Product Management: Administrators can efficiently post, update, and delete products, ensuring a streamlined product management process.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Order Oversight: Maintain a vigilant eye on placed orders and effortlessly manage order status updates (shipped, delivered, in progress).
 
-## Build
+Advanced Analytics: Dive into detailed analytics via our dedicated analytics page, providing insights into placed, shipped, and in-progress orders. Additionally, view sales data for the current and previous months.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+FAQs and Coupons: Admins can disseminate valuable product information through FAQs and extend discounts via our coupon management system.
 
-## Running unit tests
+Customer Module:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Secure Customer Access: Customers can securely log in, generate tokens, and access authenticated APIs through our robust JWT-based authentication and authorization system.
 
-## Running end-to-end tests
+Product Discovery: Explore our extensive product selection conveniently displayed in the dashboard.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Efficient Shopping: Seamlessly add single or multiple products to your cart for a smooth shopping experience.
 
-## Further help
+Simplified Ordering: Effortlessly place orders after adding products to your cart and enjoy discounts by applying coupons using coupon IDs.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Share Your Feedback: Customers can post reviews for delivered products, facilitating informed decision-making for others.
+
+Wishlist: Create a personalized wishlist by adding products you love.
+
+Product Insights: Obtain comprehensive details about specific products, including product details, reviews, and FAQs, with a simple click on the product name.
+
+User Profile Management: Easily update user profiles and change passwords for enhanced user control.
+
+Order Tracking: Conveniently track your orders using tracking IDs, even if you're not logged in.
