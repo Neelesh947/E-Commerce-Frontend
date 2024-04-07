@@ -47,6 +47,7 @@ import { VieProductDetailsComponent } from './pages/user/vie-product-details/vie
 import { ViewWishListComponent } from './pages/user/view-wish-list/view-wish-list.component';
 import { TrackOrderComponent } from './pages/tracking/track-order/track-order.component';
 import { OrderByStatusComponent } from './pages/admin/analytics/order-by-status/order-by-status.component';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -88,11 +89,13 @@ import { OrderByStatusComponent } from './pages/admin/analytics/order-by-status/
     FormsModule,MatInputModule,MatSnackBarModule,
     HttpClientModule,MatSelectModule,
     MatDividerModule,MatDialogModule,
-    MatDatepickerModule,MatTableModule,ReactiveFormsModule
+    MatDatepickerModule,MatTableModule,ReactiveFormsModule,
+    CommonModule
   ],
   providers: [
     provideAnimationsAsync(),
-    provideNativeDateAdapter()
+    provideNativeDateAdapter(),
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

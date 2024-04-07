@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../../services/admin.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-post-coupon',
@@ -10,9 +11,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PostCouponComponent implements OnInit{
 
-  constructor(private admin:AdminService, private router:Router, private snackbar:MatSnackBar){}
+  constructor(private admin:AdminService, 
+        private router:Router, 
+        private datePipe:DatePipe,
+        private snackbar:MatSnackBar){}
 
   coupon:any={};
+
+  formatExpiryDate(selectedDate: Date): string {
+    return this.datePipe.transform(selectedDate, 'yyyy-MM-dd') || '';
+  }
 
   ngOnInit(): void {
   }

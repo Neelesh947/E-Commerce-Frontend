@@ -44,8 +44,6 @@ export class LoginComponent implements OnInit{
     }
 
     this.login.generateTokens(this.loginData).subscribe((data:any)=>{
-      console.log(data);
-
       this.login.loginUser(data.token);
 
       this.login.getCurrentUser().subscribe(
@@ -55,18 +53,10 @@ export class LoginComponent implements OnInit{
             const userRoles: string[] = user.role;
             // Check if the user has the 'admin' role
             if (userRoles.includes('ADMIN')) {
-              // Perform actions for admin user
-              //console.log('User is an admin.');
-
-              //admin dashboard
-             // window.location.href='/admin'
              this.router.navigate(['admin/dashboard']);
              this.login.loginStatusSubject.next(true);
-
             } 
             else if(userRoles.includes('CUSTOMER')) {
-              // normal user dashboard
-              // window.location.href='/user-dashboard'
               this.router.navigate(['user-dashboard/dashboard']);
               this.login.loginStatusSubject.next(true);
             }

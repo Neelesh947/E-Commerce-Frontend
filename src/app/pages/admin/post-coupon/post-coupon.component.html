@@ -24,7 +24,7 @@
             <mat-label>Expiration Date</mat-label>
             <input matInput [matDatepicker]="picker"
             [(ngModel)]="coupon.expirationDate"
-            name="expirationDate">
+            name="expirationDate" (ngModelChange)="coupon.expirationDate = formatExpiryDate($event)">
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>

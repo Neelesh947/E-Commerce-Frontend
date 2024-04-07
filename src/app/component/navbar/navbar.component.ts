@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.isLoggedIn = this.login.isLoggedIn();    
     this.login.getCurrentUser().subscribe((users: any) => {
-      this.userRoles = users.role || []; // Handle case where roles may be undefined
+      this.userRoles = users.role || [];
       this.isAdminLoggedIn = this.userRoles.includes('ADMIN');
       this.isCustomerLoggedIn = this.userRoles.includes('CUSTOMER');
     });
@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
 
   public logout(): void {
     this.login.logout();
-    this.router.navigateByUrl('trackOrder'); // Navigate to the login page
-    window.location.reload(); // Reloading the page may not be necessary, consider alternative methods
+    this.router.navigateByUrl('trackOrder');
+    window.location.reload();
   }  
 }
