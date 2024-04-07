@@ -3,7 +3,7 @@
     <div *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn">
       <mat-toolbar color="primary" class="navbar">
         <span class="spacer"></span>
-        <a mat-button routerLink="" routerLinkActive="active" class="order">Track Order</a>
+        <a mat-button routerLink="trackOrder" routerLinkActive="active" class="order">Track Order</a>
         <a mat-button routerLink="register" routerLinkActive="active" class="register">Register</a>
         <a mat-button routerLink="login" routerLinkActive="active" class="login">Login</a>
         <a mat-button [matMenuTriggerFor]="menu" class="post">For Post</a>

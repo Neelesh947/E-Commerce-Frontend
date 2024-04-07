@@ -23,6 +23,7 @@ import { ViewOrderProductsComponent } from './pages/user/view-order-products/vie
 import { ReviewOrderedProductComponent } from './pages/user/review-ordered-product/review-ordered-product.component';
 import { VieProductDetailsComponent } from './pages/user/vie-product-details/vie-product-details.component';
 import { ViewWishListComponent } from './pages/user/view-wish-list/view-wish-list.component';
+import { TrackOrderComponent } from './pages/tracking/track-order/track-order.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,11 @@ const routes: Routes = [
   {
     path:"aregister",
     component: AregisterComponent,
+    pathMatch:"full"
+  },
+  {
+    path:"trackOrder",
+    component: TrackOrderComponent,
     pathMatch:"full"
   },
   {

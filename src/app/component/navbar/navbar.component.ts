@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
 
   public logout(): void {
     this.login.logout();
+    this.router.navigateByUrl('trackOrder'); // Navigate to the login page
     window.location.reload(); // Reloading the page may not be necessary, consider alternative methods
-    this.router.navigateByUrl('/login'); // Navigate to the login page
   }  
 }
