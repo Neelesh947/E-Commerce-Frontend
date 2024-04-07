@@ -83,4 +83,11 @@ export class AdminService {
   }
   //update the product details
 
+
+  //analytics
+  public getAnalytics()
+  {
+    return this.http.get(`${basicUrl}/Orders/analytics`)
+  }
+
 }

@@ -46,6 +46,7 @@ import { ReviewOrderedProductComponent } from './pages/user/review-ordered-produ
 import { VieProductDetailsComponent } from './pages/user/vie-product-details/vie-product-details.component';
 import { ViewWishListComponent } from './pages/user/view-wish-list/view-wish-list.component';
 import { TrackOrderComponent } from './pages/tracking/track-order/track-order.component';
+import { OrderByStatusComponent } from './pages/admin/analytics/order-by-status/order-by-status.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { TrackOrderComponent } from './pages/tracking/track-order/track-order.co
     VieProductDetailsComponent,
     ViewWishListComponent,
     TrackOrderComponent,
+    OrderByStatusComponent,
   ],
   imports: [
     BrowserModule,
